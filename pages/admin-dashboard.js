@@ -458,17 +458,6 @@ export function renderAdminDashboard(state) {
 
   return `
     <section class="section">
-      <div class="hero-card">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-          <div>
-            <div class="eyebrow">Portal Management</div>
-            <h1 class="headline" style="margin-top:22px;">Admin</h1>
-            <p class="lede" style="margin-top:8px;">Authenticated for ${escapeHtml(state.viewer?.phone || '')}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
       ${renderTabNav(activeView, admin?.stats)}
       ${viewContent}
     </section>
