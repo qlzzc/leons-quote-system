@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "styles/**", "use": "@vercel/static" },
+    { "src": "lib/**", "use": "@vercel/static" },
+    { "src": "pages/**", "use": "@vercel/static" },
+    { "src": "components/**", "use": "@vercel/static" },
+    { "src": "quote-viewer.html", "use": "@vercel/static" },
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1.js" },
+    { "src": "/quote-viewer.html", "dest": "/quote-viewer.html" },
+    { "src": "/styles/(.*)", "dest": "/styles/$1" },
+    { "src": "/lib/(.*)", "dest": "/lib/$1" },
+    { "src": "/pages/(.*)", "dest": "/pages/$1" },
+    { "src": "/components/(.*)", "dest": "/components/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

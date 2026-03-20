@@ -1,0 +1,9 @@
+{
+  "name": "leons-venetian-plaster-quotes",
+  "version": "1.0.0",
+  "description": "Secure quote & contract portal for Leon's Venetian Plaster",
+  "dependencies": {
+    "twilio": "^4.19.0",
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}

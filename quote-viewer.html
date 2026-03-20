@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Leon Zhang's Venetian Plaster Client Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0e0c;
+      --surface: rgba(255, 248, 238, 0.08);
+      --surface-strong: rgba(255, 248, 238, 0.12);
+      --border: rgba(214, 189, 145, 0.24);
+      --text: #f6f1e8;
+      --muted: rgba(246, 241, 232, 0.72);
+      --accent: #d0ab67;
+      --accent-soft: rgba(208, 171, 103, 0.18);
+      --shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background:
+        radial-gradient(circle at top, rgba(208, 171, 103, 0.12), transparent 34%),
+        linear-gradient(180deg, #171512 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.28;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: min(720px, 100%);
+      padding: 40px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      color: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 400;
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 18px 0 0;
+      max-width: 56ch;
+      line-height: 1.8;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(208, 171, 103, 0.46);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, rgba(208, 171, 103, 0.28), var(--accent-soft));
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 20px; }
+      main { padding: 28px; border-radius: 24px; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Portal Access Updated</p>
+    <h1>The client portal now lives in a dedicated app experience.</h1>
+    <p>
+      The original secure quote viewer has been folded into a broader client portal with project access,
+      proposal review, assets, and contract signing. Continue into the current portal below.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Open Client Portal</a>
+      <a class="btn btn-secondary" href="/#/admin">Admin Access</a>
+    </div>
+  </main>
+</body>
+</html>
